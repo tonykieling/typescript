@@ -1,0 +1,11 @@
+# npm i -g typescript
+# tsc --watch a_paticular_file.ts
+  instead, it is okay to have in packge.json "build": "tsc --watch" - when rootDir is set on tscconfig.json
+# tsc --init --> creates tscconfig.json
+  some of the possible configs:
+   outDir and rootDir 
+
+*** it is possible to work with TS without the tscconfig.json file.
+in this case, it will follow the default settings from tsc and needs to use watch or compile every time
+
+*** the tesc is used to compile/convert from TS to JS, which is the language the browser understand

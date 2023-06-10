@@ -1,0 +1,5 @@
+ # npx create-react-app . --template typescript
+   // it creates an app using ts
+
+   ! do not need 'ts --watch' bkz 'npm start' will do that
+   
