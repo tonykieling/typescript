@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=BCg4U1FzODs&t=1255s
+
 let n: number = 500;
 n++;
 const word: string = "TK";
@@ -59,7 +61,7 @@ const user: User = {
 // user.name = "asd"; // it errors
 console.log("user - ", user);
 
-// Type Assertion says to the compiler we want trat a variable in a diff type
+// Type Assertion says to the compiler we want treat a variable in a diff type
 let cid: any = 1;
 let customerId = <boolean>cid; // OR let customerId = cid as boolean;
 console.log("customerId: ", customerId);
@@ -97,6 +99,24 @@ interface MathFunc {
 const addNum: MathFunc = (x: number, y: number) : number => x + y;
 const subNum: MathFunc = (x: number, y: number) : number => x - y;
 console.log("addNum(10, 20): ", addNum(10, 20), "subNum(20, 10): ", subNum(20, 10));
+
+//INterface in Array type
+interface NumList {
+    [index:number]:number
+}
+
+let numArr: NumList = [1, 2, 3];
+numArr[0];
+numArr[1];
+console.log("numArr::: ", numArr);
+
+interface IStringList {
+    [index:string]:string
+}
+let strArr : IStringList = {};
+strArr["TS"] = "TypeScript";
+strArr["JS"] = "JavaScript";
+console.log("strArr::: ", strArr);
 
 
 // Classes
@@ -180,8 +200,8 @@ function reverseArray<T>(arr: T[]): T[] {
         temp.push(arr[i]);
     return temp;
 }
-console.log(" original array: ", ["a", "b", "c", "d", "e"], "- string array reversed: ", reverseArray<string>(["a", "b", "c", "d", "e"]));
-console.log(" original array: ", [1, 22, 333, 4444, 55555], "- number array reversed: ", reverseArray<number>([1, 22, 333, 4444, 55555]));
+console.log(reverseArray<string>(["a", "b", "c", "d", "e"]));
+console.log(reverseArray<number>([1, 22, 333, 4444, 55555]));
 // the type right before the array sets the type of array being passed
 
 

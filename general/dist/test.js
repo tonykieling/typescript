@@ -1,4 +1,5 @@
 "use strict";
+// https://www.youtube.com/watch?v=BCg4U1FzODs&t=1255s
 let n = 500;
 n++;
 const word = "TK";
@@ -51,7 +52,7 @@ const user = {
 };
 // user.name = "asd"; // it errors
 console.log("user - ", user);
-// Type Assertion says to the compiler we want trat a variable in a diff type
+// Type Assertion says to the compiler we want treat a variable in a diff type
 let cid = 1;
 let customerId = cid; // OR let customerId = cid as boolean;
 console.log("customerId: ", customerId);
@@ -77,6 +78,14 @@ console.log("userInterfaceExample - ", userInterfaceExample);
 const addNum = (x, y) => x + y;
 const subNum = (x, y) => x - y;
 console.log("addNum(10, 20): ", addNum(10, 20), "subNum(20, 10): ", subNum(20, 10));
+let numArr = [1, 2, 3];
+numArr[0];
+numArr[1];
+console.log("numArr::: ", numArr);
+let strArr = {};
+strArr["TS"] = "TypeScript";
+strArr["JS"] = "JavaScript";
+console.log("strArr::: ", strArr);
 // Classes
 // attributes can be private, public or protected
 //  - private attribute is accessed (read or written) only within the class
@@ -139,6 +148,6 @@ function reverseArray(arr) {
         temp.push(arr[i]);
     return temp;
 }
-console.log(" original array: ", ["a", "b", "c", "d", "e"], "- string array reversed: ", reverseArray(["a", "b", "c", "d", "e"]));
-console.log(" original array: ", [1, 22, 333, 4444, 55555], "- number array reversed: ", reverseArray([1, 22, 333, 4444, 55555]));
+console.log(reverseArray(["a", "b", "c", "d", "e"]));
+console.log(reverseArray([1, 22, 333, 4444, 55555]));
 // the type right before the array sets the type of array being passed
