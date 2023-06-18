@@ -17,6 +17,9 @@
 0, 1, 3
 0, 2, 3
 0, 2, 4
+1 * (3 - 1 - 0) + 2 * 0 = 2
+1 * (3 - 1 - 1) + 2 * 1 = 3
+1 * (3 - 1 - 2) + 2 * 2 = 4
 
 - 4
 - 10
@@ -31,21 +34,28 @@
 0, 100, 110, 120
 */
 function stones(n, a, b) {
+    // reverse position
+    // if (a < b) {
+    //     const temp: number = a;
+    //     a = b;
+    //     b = temp;
+    //     // OR
+    //     a = a + b; 3 
+    //     b = a - b; 1
+    //     a = a - b; 2
+    // }
     const result = [];
     for (let i = 0; i < n - 1; i++) {
         let ans1 = a * (n - 1 - i) + b * i;
         let ans2 = b * (n - 1 - i) + a * i;
-        console.log("ans1: ", ans1, " ans2: ", ans2);
+        // let ans1: number = a * i + (n - i - 1) * b; // tried this form but looks is missing the one (the first) value
+        if (!result.includes(ans1))
+            result.push(ans1);
+        if (!result.includes(ans2))
+            result.push(ans2);
     }
-    // const totalRounds: number = 2 ^ (n - 1);
-    // for (let round = 0; round < totalRounds; round++) {
-    //     let tempArray: Array<number> = [];
-    //     for (let count = 0; count < n; count++) {
-    //         tempArray = [...tempArray, count + a];
-    //     }
-    //     result.push(tempArray);
-    // }
-    // handle the array of arrays to get only the last item of each one
-    return [];
+    result.sort((a, b) => a - b);
+    return result;
 }
+// console.log(stones(6, 1, 2));
 console.log(stones(4, 10, 100));
